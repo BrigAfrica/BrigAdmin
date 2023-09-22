@@ -1,3 +1,293 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Default Font Family */
+@font-face {
+  font-family: "AvertaExtraBold";
+  src: url(./assets/fonts/AvertaExtraBold.otf) format("opentype");
+}
+@font-face {
+  font-family: "AvertaRegular";
+  src: url(./assets/fonts/AvertaRegular.otf) format("opentype");
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  font-family: "AvertaRegular", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "AvertaRegular", sans-serif;
+  font-weight: 700;
+}
+
+p,
+button {
+  font-family: "AvertaRegular";
+}
+
+.light-green-bg,
+.categoryLinkItem:hover {
+  background: rgba(15, 177, 170, 0.07);
+}
+
+.container__bg {
+  background-image: url("../src/assets/backgrounds/authbg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.sign-height {
+  height: 88%;
+}
+
+.launch__bg {
+  background-image: url("../src/assets/backgrounds/launchbg.png");
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.launch__title {
+  font-family: "Averta";
+  letter-spacing: 0.15em;
+}
+
+.launch__subtext {
+  width: 670px;
+
+  font-family: "Averta";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.3vw;
+  line-height: 157.52%;
+  text-align: center;
+  color: #ffffff;
+}
+
+.launch__bg form {
+  position: absolute;
+}
+
+.countdown__grid {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-row-gap: 10px;
+  grid-column-gap: 50px;
+  padding: 10px;
+}
+
+.countdown__time {
+  font-family: "Averta";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 60px;
+  color: #14beb7;
+}
+
+.countdown__grid > .countdown__time {
+  text-align: center;
+}
+
+.countdown__text {
+  font-family: "Averta";
+  font-style: normal;
+  color: #ffffff;
+}
+
+.countdown__grid > .countdown__text {
+  text-align: center;
+  font-size: 20px;
+}
+
+.countdown__time_dets {
+  padding-right: 60px;
+}
+
+.countdown {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 102px;
+}
+
+.launch__end {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+}
+
+.launch__subscription-text {
+  position: absolute;
+  top: 22.6rem;
+
+  font-family: "Averta";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.3vw;
+  line-height: 157.52%;
+  text-align: center;
+  color: #ffffff;
+}
+
+.launch__input {
+  padding: 0px;
+  gap: 12px;
+
+  position: absolute;
+  width: 607px;
+  height: 65px;
+  left: 417px;
+  top: 26.5rem;
+}
+
+.launch__input-form {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.launch__input-form button {
+  background: #0c837e;
+  border: 1px solid #0c837e;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  color: #ffffff;
+}
+
+#inputEmail {
+  width: 45%;
+  height: 45px;
+}
+
+@media (max-width: 768px) {
+  .container__bg {
+    background-image: url("../src/assets/backgrounds/authbg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+  }
+}
+
+/* Styles for screens with a minimum width of 769px and maximum width of 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .background-image {
+    /* Adjust styles for medium-sized screens */
+  }
+}
+
+/* Styles for screens with a minimum width of 1025px */
+@media (min-width: 1025px) {
+  .background-image {
+    /* Adjust styles for larger screens */
+  }
+}
+
+/* LOADING SPINNER */
+.loader,
+.loader:before,
+.loader:after {
+  width: 40px; /* update this to control the size */
+  aspect-ratio: 0.5;
+  display: grid;
+  background: radial-gradient(#000 68%, #0000 72%) center/100% 50% no-repeat;
+  animation: load 1.2s infinite linear calc(var(--_s, 0) * 0.4s);
+  transform: translate(calc(var(--_s, 0) * 150%));
+}
+.loader:before,
+.loader:after {
+  content: "";
+  grid-area: 1/1;
+}
+.loader:before {
+  --_s: -1;
+}
+.loader:after {
+  --_s: 1;
+}
+
+#sidebar {
+  --tw-translate-x: -100%;
+}
+#menu-close-icon {
+  display: none;
+}
+
+#menu-open:checked ~ #sidebar {
+  --tw-translate-x: 0;
+}
+#menu-open:checked ~ * #mobile-menu-button {
+  background-color: rgba(31, 41, 55, var(--tw-bg-opacity));
+}
+#menu-open:checked ~ * #menu-open-icon {
+  display: none;
+}
+#menu-open:checked ~ * #menu-close-icon {
+  display: block;
+}
+
+
+.form_label{
+  @apply text-[10px] font-bold mb-1
+}
+.form_title{
+  @apply text-2xl font-extrabold 
+}
+
+.notification__bell{
+  @apply flex items-center justify-center h-5 w-5 rounded-full text-xs text-white bg-[#EA5455] absolute -top-2 -right-2
+}
+
+.card_widgets{
+  @apply shadow-md rounded-md bg-white p-6  xs:max-md:px-3 
+}
+
+.report_gradient{
+  background: linear-gradient(180deg, rgba(15, 96, 255, 0.00) 0%, rgba(15, 96, 255, 0.04) 100%);
+}
+
+@media (min-width: 768px) {
+  #sidebar {
+      --tw-translate-x: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .bg-transparent-grey {
+      background-color: rgba(40, 105, 87, 0.2); /* Adjust the color and transparency as needed */
+  }
+}
+
+@keyframes load {
+  20% {
+    background-position: top;
+  }
+  40% {
+    background-position: bottom;
+  }
+  60% {
+    background-position: center;
+  }
+}
